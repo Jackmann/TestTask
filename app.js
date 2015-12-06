@@ -1,22 +1,20 @@
-class Animal {
-  constructor(name) { 
-    this.name = name;
-  }
-
-  getName() { 
-    return this.name;
-  }
+function Animal(name) {
+  this.name = name;
 }
 
-class Dog extends Animal {
-  constructor(name) {
-    this.name = name;
-  }
+Animal.prototype.getName = function getName() {
+  return this.name;
+};
 
-  bark() { 
-    return "Dog " + this.name + " is barking.";
-  }
+function Dog(name) {
+  this.name = name;
 }
+
+Dog.prototype = Object.create(Animal.prototype);
+
+Dog.prototype.bark = function bark() {
+  return 'Dog ' + this.name + ' is barking.';
+};
 
 var dog = new Dog("Aban");
 
