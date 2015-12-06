@@ -3,7 +3,7 @@ class Animal {
     this.name = name;
   }
 
-  getName(name) { 
+  getName() { 
     return this.name;
   }
 }
